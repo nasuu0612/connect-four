@@ -16,7 +16,7 @@ function handlePlayerMove(col) {
   if (dropDisc(board, col, 1)) {
     updateBoard(boardDiv, board);
     if (checkWin(board, 1)) {
-      message.textContent = "あなたの勝ち！";
+      message.textContent = "おまえのかち！";
       return;
     }
     currentPlayer = 2;
@@ -29,9 +29,9 @@ function handleAIMove() {
   dropDisc(board, aiCol, 2);
   updateBoard(boardDiv, board);
   if (checkWin(board, 2)) {
-    message.textContent = "AIの勝ち！";
+    message.textContent = "AIのかち！";
     return;
   }
   currentPlayer = 1;
-  message.textContent = "あなたの番！";
+  message.textContent = "おまえのばん";
 }
