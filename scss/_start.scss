@@ -1,0 +1,17 @@
+#start-screen {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#start-button {
+  padding: 10px 20px;
+  font-size: 24px;
+  background-color: #464646;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10%;
+}

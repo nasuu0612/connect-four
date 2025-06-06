@@ -1,28 +1,26 @@
+@charset "UTF-8";
 @font-face {
-  font-family: 'MyFont';
-  src: url('font/なにくそ.otf') format('opentype');
+  font-family: "MyFont";
+  src: url("font/なにくそ.otf") format("opentype");
 }
-
-body{
-  font-family: 'MyFont', sans-serif;
+body {
+  font-family: "MyFont", sans-serif;
   text-align: center;
   margin: 0;
-  
 }
 
-button{
-  font-family: 'MyFont', sans-serif;
+button {
+  font-family: "MyFont", sans-serif;
 }
 
-#start-screen{
+#start-screen {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
-
-#start-button{
+#start-button {
   padding: 10px 20px;
   font-size: 24px;
   background-color: #464646;
@@ -40,6 +38,7 @@ button{
   margin: 40px auto;
   width: fit-content;
 }
+
 .cell {
   width: 60px;
   height: 60px;
@@ -50,9 +49,13 @@ button{
   justify-content: center;
   cursor: pointer;
 }
+
 .red {
   background: red;
 }
+
 .yellow {
   background: gold;
 }
+
+/*# sourceMappingURL=style.css.map */
