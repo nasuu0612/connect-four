@@ -2,7 +2,7 @@
 
 import { dropDisc, checkWin } from './game.js';
 
-const MAX_DEPTH = 4;
+const MAX_DEPTH = 8;
 
 export function getBestMove(board, player) {
   // 1手で勝てる手があれば優先
@@ -41,8 +41,8 @@ function alphaBetaRoot(board, player, depth) {
 function alphaBeta(board, depth, alpha, beta, isMaximizing, currentPlayer) {
   const opponent = currentPlayer === 1 ? 2 : 1;
 
-  if (checkWin(board, currentPlayer)) return isMaximizing ? -1000 : 1000;
-  if (checkWin(board, opponent)) return isMaximizing ? 1000 : -1000;
+  if (checkWin(board, currentPlayer)) return 1000;
+  if (checkWin(board, opponent)) return -1000;
   if (depth === 0 || isFull(board)) return evaluateBoard(board, currentPlayer);
 
   if (isMaximizing) {
