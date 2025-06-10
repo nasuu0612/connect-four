@@ -32,6 +32,7 @@ function handlePlayerMove(col) {
       return;
     }
     currentPlayer = 2;
+    message.textContent = player2 + "のばん";
     setTimeout(handleAIMove, 500);
   }
 }
