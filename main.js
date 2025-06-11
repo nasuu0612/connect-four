@@ -3,21 +3,22 @@ import { createBoard, updateBoard } from './js/board.js';
 import { createEmptyBoard, dropDisc, checkWin } from './js/game.js';
 import { getBestMove } from './js/ai.js';
 import { showStartScreen, showGameScreen } from './js/screen.js'
+import { getPlayerTypeAndName } from './js/start.js';
 
 const board = createEmptyBoard();
 const boardDiv = document.getElementById("board");
 const message = document.getElementById("message");
 const startButton = document.getElementById("start-button");
 let currentPlayer = 1;
-
-const player1 = "おまえ";
-const player2 = "AI";
-
+let player1, player2;
 
 showStartScreen();
 
 startButton.addEventListener("click", () => {
+  player1 = getPlayerTypeAndName("one-player-type", "one-player-name")||"おまえ";
+  player2 = getPlayerTypeAndName("two-player-type", "two-player-name")||"てめえ";
   showGameScreen();
+  message.textContent = player1 + "のばん";
   createBoard(boardDiv, handlePlayerMove);
   updateBoard(boardDiv, board);
 });
