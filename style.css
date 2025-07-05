@@ -18,7 +18,7 @@ button {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 100%;
+  font-size: min(2.5vh, 2.5vw);
   width: 80%;
 }
 
@@ -51,19 +51,34 @@ input[type=text] {
   padding: 1em;
 }
 
-#one-player-select,
-#two-player-select {
-  padding-bottom: 2vh;
-  width: 100%;
-}
-
-/* ===== スマホ用スタイル（幅768px以下） ===== */
-@media (max-width: 768px) {
+/* ===== スマホ用縦画面スタイル（幅768px以下） ===== */
+@media (max-width: 768px) and (min-height: 430px) {
   #mobile-warning {
     display: block !important;
     font-size: 0.8em;
     color: red;
     margin-top: 1vh;
+  }
+}
+/* ===== スマホ用横画面スタイル（幅430px以下） ===== */
+@media (max-height: 430px) {
+  #player-select {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+  }
+  #one-player-select,
+  #two-player-select {
+    padding-bottom: 2vh;
+    width: fit-content;
+  }
+  #one-player-name,
+  #two-player-name {
+    width: 50%;
+  }
+  label {
+    display: block;
+    text-align: left;
   }
 }
 #board {
