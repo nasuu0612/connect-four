@@ -103,7 +103,7 @@ input[type=text] {
 }
 
 @media (max-height: 430px) {
-  h1 {
+  #game-screen h1 {
     display: none;
   }
 }
