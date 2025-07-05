@@ -13,29 +13,34 @@
   <div id="start-screen">
     <h1>コネクトフォー</h1>
     <p id="mobile-warning" style="display: none;">スマホはよこがめんのほうがいいぜ</p>
-    <div id="one-player-select">
-      <h3>1player</h3>
-      <label>
-        <input type="radio" name="one-player-type" value="human" checked>
-        <input type="text" id="one-player-name" placeholder="おまえ">
-      </label>
-      <label>
-        <input type="radio" name="one-player-type" value="AI">
-        AI
-      </label>
-    </div>
-    <div id="two-player-select">
-      <h3>2player</h3>
-      <label>
-        <input type="radio" name="two-player-type" value="human">
-        <input type="text" id="two-player-name" placeholder="てめえ">
-      </label>
-      <label>
-        <input type="radio" name="two-player-type" value="AI" checked>
-        AI
-      </label>
+    <div id="player-select">
+      <div id="one-player-select">
+        <h3>1player</h3>
+        <label>
+          <input type="radio" name="one-player-type" value="human" checked>
+          <input type="text" id="one-player-name" placeholder="おまえ">
+        </label>
+        <br>
+        <label>
+          <input type="radio" name="one-player-type" value="AI">
+          <p style="display: inline;">AI</p>
+        </label>
+      </div>
+      <div id="two-player-select">
+        <h3>2player</h3>
+        <label>
+          <input type="radio" name="two-player-type" value="human">
+          <input type="text" id="two-player-name" placeholder="てめえ">
+        </label>
+        <br>
+        <label>
+          <input type="radio" name="two-player-type" value="AI" checked>
+          <p style="display: inline;">AI</p>
+        </label>
+      </div>
     </div>
     <button id="start-button">start!</button>
+
   </div>
   <div id="game-screen">
     <h1>コネクトフォー</h1>
