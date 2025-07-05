@@ -59,21 +59,24 @@ input[type=text] {
 
 /* ===== スマホ用スタイル（幅768px以下） ===== */
 @media (max-width: 768px) {
-  #start-screen {
-    height: 80%;
+  #mobile-warning {
+    display: block !important;
+    font-size: 0.8em;
+    color: red;
+    margin-top: 1vh;
   }
 }
 #board {
   display: grid;
-  grid-template-columns: repeat(7, 60px);
+  grid-template-columns: repeat(7, 5vw);
   gap: 5px;
-  margin: 40px auto;
+  margin: 5% auto;
   width: fit-content;
 }
 
 .cell {
-  width: 60px;
-  height: 60px;
+  width: 5vw;
+  height: 5vw;
   background: lightgray;
   border-radius: 50%;
   display: flex;
@@ -88,6 +91,16 @@ input[type=text] {
 
 .yellow {
   background: gold;
+}
+
+/* ===== PC用スタイル（幅768px以上） ===== */
+#game-screen {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 100%;
+  width: 80%;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -45,11 +45,12 @@ input[type="text"] {
   width: 100%;
 }
 
-
 /* ===== スマホ用スタイル（幅768px以下） ===== */
 @media (max-width: 768px) {
-  #start-screen {
-    height: 80%;
+  #mobile-warning {
+    display: block !important;
+    font-size: 0.8em;
+    color: red;
+    margin-top: 1vh;
   }
-
 }
