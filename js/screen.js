@@ -1,12 +1,23 @@
 const startScreen = document.getElementById("start-screen");
 const gameScreen = document.getElementById("game-screen");
 
-export function showStartScreen(){
-    startScreen.style.display = "block";
-    gameScreen.style.display = "none";
+function showOnly(screenToShow) {
+  const screens = [startScreen, gameScreen];
+  screens.forEach(screen => {
+    screen.classList.remove("visible", "hidden");
+    if (screen === screenToShow) {
+      screen.classList.add("visible");
+    } else {
+      screen.classList.add("hidden");
+    }
+  });
 }
 
-export function showGameScreen(){
-    startScreen.style.display = "none";
-    gameScreen.style.display = "block";
+
+export function showStartScreen() {
+  showOnly(startScreen);
+}
+
+export function showGameScreen() {
+  showOnly(gameScreen);
 }
