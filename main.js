@@ -24,31 +24,50 @@ startButton.addEventListener("click", () => {
   message.textContent = player1 + "のばん";
   createBoard(boardDiv, handlePlayerMove);
   updateBoard(boardDiv, board);
+
+  if (getCurrentPlayerType() === "AI") {
+    setTimeout(handleAIMove, 500);
+  }
 });
 
 
 function handlePlayerMove(col) {
-  if (currentPlayer !== 1) return;
-  if (dropDisc(board, col, 1)) {
+  if (getCurrentPlayerType() !== "human") return;
+
+  if (dropDisc(board, col, currentPlayer)) {
     updateBoard(boardDiv, board);
-    if (checkWin(board, 1)) {
-      message.textContent = player1 + "のかち！";
+    if (checkWin(board, currentPlayer)) {
+      message.textContent = getCurrentPlayerName() + "のかち！";
       return;
     }
-    currentPlayer = 2;
-    message.textContent = player2 + "のばん";
-    setTimeout(handleAIMove, 500);
+    switchTurn();
   }
 }
 
 function handleAIMove() {
-  const aiCol = getBestMove(board, 2);
-  dropDisc(board, aiCol, 2);
+  const aiCol = getBestMove(board, currentPlayer);
+  dropDisc(board, aiCol, currentPlayer);
   updateBoard(boardDiv, board);
-  if (checkWin(board, 2)) {
-    message.textContent = player2 + "のかち！";
+  if (checkWin(board, currentPlayer)) {
+    message.textContent = getCurrentPlayerName() + "のかち！";
     return;
   }
-  currentPlayer = 1;
-  message.textContent = player1 + "のばん";
+  switchTurn();
+}
+
+function switchTurn() {
+  currentPlayer = currentPlayer === 1 ? 2 : 1;
+  message.textContent = getCurrentPlayerName() + "のばん";
+
+  if (getCurrentPlayerType() === "AI") {
+    setTimeout(handleAIMove, 500);
+  }
+}
+
+function getCurrentPlayerType() {
+  return currentPlayer === 1 ? player1Type : player2Type;
+}
+
+function getCurrentPlayerName() {
+  return currentPlayer === 1 ? player1 : player2;
 }
