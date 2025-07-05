@@ -93,7 +93,6 @@ input[type=text] {
   background: gold;
 }
 
-/* ===== PC用スタイル（幅768px以上） ===== */
 #game-screen {
   position: fixed;
   top: 50%;
@@ -101,6 +100,12 @@ input[type=text] {
   transform: translate(-50%, -50%);
   font-size: 100%;
   width: 80%;
+}
+
+@media (max-height: 430px) {
+  h1 {
+    display: none;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
